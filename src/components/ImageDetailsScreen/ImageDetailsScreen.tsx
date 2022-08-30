@@ -21,9 +21,11 @@ export const ImageDatilsScreen = () => {
   const styles = useMemo(() => getStyles(isPortrait), [isPortrait]);
 
   useEffect(() => {
-    getOrientationAsync().then((orientation) =>
-      setIsPortrait(orientation === Orientation.PORTRAIT_UP)
-    );
+    try {
+      getOrientationAsync().then((orientation) =>
+        setIsPortrait(orientation === Orientation.PORTRAIT_UP)
+      );
+    } catch (e) {}
   }, []);
 
   useEffect(() => {
@@ -33,7 +35,7 @@ export const ImageDatilsScreen = () => {
       setIsPortrait(orientation === Orientation.PORTRAIT_UP);
     });
 
-    return sub.remove;
+    return sub?.remove;
   }, []);
 
   const route = useRoute<RouteProp<NavigationParams, AppScreens.Details>>();
