@@ -1,7 +1,7 @@
 # Image gallery test assignment
 
 The app is developed and tested on the iPhone. So IOS is preferable for testing,
-But it should for Android just as fine, maybe with some minor visual defects
+But it should for work with Android just as fine, maybe with some minor visual defects
 
 ## To install the project
 
